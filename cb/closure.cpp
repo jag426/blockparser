@@ -43,14 +43,6 @@ struct Closure:public Callback
     virtual const optparse::OptionParser *optionParser() const { return &parser;   }
     virtual bool                         needTXHash() const    { return true;      }
 
-    virtual void aliases(
-        std::vector<const char*> &v
-    ) const
-    {
-        v.push_back("cluster");
-        v.push_back("wallet");
-    }
-
     virtual int init(
         int argc,
         const char *argv[]

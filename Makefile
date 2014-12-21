@@ -72,6 +72,13 @@ all:parser
 	@${CPLUS} -MD ${INC} ${COPT}  -c cb/closure.cpp -o .objs/closure.o
 	@mv .objs/closure.d .deps
 
+.objs/clusterize.o : cb/clusterize.cpp
+	@echo c++ -- cb/clusterize.cpp
+	@mkdir -p .deps
+	@mkdir -p .objs
+	@${CPLUS} -MD ${INC} ${COPT}  -c cb/clusterize.cpp -o .objs/clusterize.o
+	@mv .objs/clusterize.d .deps
+
 .objs/dumpTX.o : cb/dumpTX.cpp
 	@echo c++ -- cb/dumpTX.cpp
 	@mkdir -p .deps
@@ -270,6 +277,7 @@ all:parser
 OBJS=                       \
     .objs/allBalances.o     \
     .objs/closure.o         \
+    .objs/clusterize.o      \
     .objs/dumpTX.o          \
     .objs/help.o            \
     .objs/pristine.o        \
